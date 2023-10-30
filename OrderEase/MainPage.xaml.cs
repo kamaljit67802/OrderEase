@@ -1,29 +1,19 @@
-﻿using Microsoft.Maui.Controls;
+﻿namespace FoodDeliveryMAUI;
 
-namespace YOrderApp
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+	private readonly MainViewModel _viewModel;
 
-        private void OnLoginClicked(object sender, EventArgs e)
-        {
-            // Implement login logic here
-        }
+	public MainPage(MainViewModel viewModel)
+	{
+		InitializeComponent();
+		BindingContext = viewModel;
+		_viewModel = viewModel;
+	}
 
-        private void OnMenuClicked(object sender, EventArgs e)
-        {
-            // Navigate to the menu page
-            // Implement navigation logic here
-        }
-
-        private void OnTrackOrderClicked(object sender, EventArgs e)
-        {
-            // Navigate to the order tracking page
-            // Implement navigation logic here
-        }
-    }
+	protected async override void OnAppearing()
+	{
+	
+	}
 }
+
